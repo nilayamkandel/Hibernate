@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- constructor injection -->
+    <bean class = "com.di.Product" id="prod">
+    <constructor-arg value="3443"/>
+    <constructor-arg value = "Mobile"/>
+    <constructor-arg value = "8000"/>
+    <constructor-arg value = "samsung"/>
+    </bean>
+    
+<!-- setter injection -->    
+    <bean class = "com.di.Address" id="adr">
+    <property name="country" value="Nepal"/>
+    <property name="city" value="ktm"/>
+    <property name="state" value="Bagmati"/>
+    </bean>
+    
+    <bean class="com.di.Student" id="stud">
+    <property name="id" value="89"/>
+    <property name="fname" value="hari"/>
+    <property name="lname" value="lama"/>
+    <property name="college" value="NCC"/>
+    <property name="address" ref="adr"/>
+    </bean>
+
+</beans>
